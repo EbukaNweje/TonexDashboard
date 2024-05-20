@@ -35,7 +35,7 @@ const Payment = () => {
       });
 
       const url = `https://tonexbackend.onrender.com/api/sendpayment/${id}`
-      const url2 = `https://tonexbackend.onrender.com/api/deposit/${id}`
+      const url2 = `https://tonex-backend.vercel.app/api/deposit/${id}`
 
       const data = {
         amount:amount
