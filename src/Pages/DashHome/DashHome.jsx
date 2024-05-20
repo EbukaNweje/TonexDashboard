@@ -136,7 +136,7 @@ useEffect(()=>{
                                             .00
                                         </h3>
                                         <span style={{fontWeight: "700"}}>
-                                            {roundedNumber}BTC
+                                            {/* {roundedNumber}BTC */}
                                         </span>
                                         <p className="lineChart"></p>
                                     </div>
@@ -151,7 +151,7 @@ useEffect(()=>{
                                             $ &nbsp;{userData?.totalProfit}.00
                                         </h3>
                                         <span style={{fontWeight: "700"}}>
-                                            {roundedNumber2}BTC
+                                            
                                         </span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
@@ -163,7 +163,6 @@ useEffect(()=>{
                                         <h4>Bonus</h4>
                                         <h3>$ &nbsp;{userData?.bonus}.00</h3>
                                         <span style={{fontWeight: "700"}}>
-                                            {roundedNumber3}BTC
                                         </span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
@@ -176,7 +175,6 @@ useEffect(()=>{
                                         <h4>Referral Bonus</h4>
                                         <h3>$ &nbsp;{userData?.ref}.00</h3>
                                         <span style={{fontWeight: "700"}}>
-                                            {roundedNumber4}BTC
                                         </span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
@@ -190,7 +188,6 @@ useEffect(()=>{
                                             $ &nbsp;{userData?.totalDeposit}.00
                                         </h3>
                                         <span style={{fontWeight: "700"}}>
-                                            {roundedNumber5}BTC
                                         </span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
@@ -205,7 +202,6 @@ useEffect(()=>{
                                             .00
                                         </h3>
                                         <span style={{fontWeight: "700"}}>
-                                            {roundedNumber6}BTC
                                         </span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
@@ -220,7 +216,6 @@ useEffect(()=>{
                                             .00
                                         </h3>
                                         <span style={{fontWeight: "700"}}>
-                                            {roundedNumber7}BTC
                                         </span>
                                     </div>
                                     <div className="DashHomeMainContentAccSummaryRow1BoxR">
