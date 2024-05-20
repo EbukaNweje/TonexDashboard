@@ -135,8 +135,7 @@ useEffect(()=>{
                                             $ &nbsp;{userData?.accountBalance}
                                             .00
                                         </h3>
-                                        <span style={{fontWeight: "700"}}>
-                                            {/* {roundedNumber}BTC */}
+                                        <span style={{fontWeight: "700"}}> 
                                         </span>
                                         <p className="lineChart"></p>
                                     </div>
