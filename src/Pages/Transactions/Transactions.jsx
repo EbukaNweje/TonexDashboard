@@ -272,7 +272,11 @@ useEffect(()=>{
                                             {props.coin}
                                         </div>
                                         <div className="TransactionContentResultC3W">
-                                            <span>{props.status}</span>
+                                            <span 
+                                            style={{
+                                                background: props.status === "Approved"? "Green" : "red"
+                                            }}
+                                            > {props.status}</span>
                                         </div>
                                         <div className="TransactionContentResultC4W">
                                             {props.withdrawDate}
