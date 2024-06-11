@@ -36,8 +36,8 @@ const Transactions = () => {
         setTransOthers(true);
     };
 
-    const url = "https://tonexbackend.onrender.com/api/alldeposit"
-    const url2 = "https://tonexbackend.onrender.com/api/allwithdrawal"
+    const url = `https://tonexbackend.onrender.com/api/getalldeposit/${id}`
+    const url2 = `https://tonexbackend.onrender.com/api/getallwithdrawal/${id}`
     const url3 = `https://tonexbackend.onrender.com/api/getalltransactions/${id}`
 
     const getAllDeposit = ()=>{
@@ -274,8 +274,8 @@ useEffect(()=>{
                                         <div className="TransactionContentResultC3W">
                                             <span 
                                             style={{
-                                                background: props.status === "Approved"? "Green" : "red"
-                                            }}
+                                            background: props.status === "Approved"? "Green" : "red"
+                                        }}
                                             > {props.status}</span>
                                         </div>
                                         <div className="TransactionContentResultC4W">
