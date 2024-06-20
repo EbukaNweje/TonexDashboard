@@ -28,10 +28,3 @@ const Verify = () => {
 }
 
 export default Verify
-
-
-// <div className="VerifyRightBody">
-// <p>Your account is in order
-//     Kindly waiting for Admin Approval 
-// </p>
-// </div>
