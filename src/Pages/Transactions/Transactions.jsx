@@ -25,6 +25,7 @@ const Transactions = () => {
         setTransWithdrawal(false);
         setTransOthers(false);
     };
+    
     const handleShowWithdrawal = () => {
         setTransDeposit(false);
         setTransWithdrawal(true);

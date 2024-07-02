@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { updatewithdraw } from "../../Components/store/FeaturesSlice";
+import { BiMoneyWithdraw } from "react-icons/bi";
 
 const WithdrawFunds = () => {
     const {id} = useParams()
@@ -18,14 +19,18 @@ const WithdrawFunds = () => {
     const [amountError, setAmountError] = useState("")
     const [withdrawCodes, setWithdrawCodes] = useState("")
     const [isButtonDisabled, setButtonDisabled] = useState(false);
+    const [isButtonDisabled2, setButtonDisabled2] = useState(false);
     const [clickMe, setClickMe] = useState(false)
     const dispatch = useDispatch()
+    const [addprofit, setAddProfit] = useState()
+    const [pay, setpay] = useState(false)
 
     const userData = useSelector((state) => state.persisitedReducer.user)
     console.log(userData);
 
     const url = `https://tonexbackend.onrender.com/api/requestwithdrawcode/${id}`
     const urlll = `https://tonexbackend.onrender.com/api/withdraw/${id}`
+    const urlprofit = `https://tonexbackend.onrender.com/api/transferprofittoaccount/${id}`
 
     let userName = userData?.userName
     let email = userData?.email
@@ -72,6 +77,22 @@ const sendWithdrawcode = ()=>{
              .catch((err)=>{
                 setButtonDisabled(false)
                 console.log(err)
+            })
+}
+
+const addProfitToAccount = ()=>{
+         setButtonDisabled2(true)
+            axios.post(urlprofit)
+                .then(res=>{
+                    setpay(true)
+                console.log(res.data.message)
+                setAddProfit(res.data.message)
+            })
+             .catch((err)=>{
+                setButtonDisabled2(false)
+                console.log(err)
+                setAddProfit(err.data.message)
+                setpay(true)
             })
 }
 
@@ -156,6 +177,18 @@ const sendWithdrawcode = ()=>{
                             </div>
                         </div>
                         <div className="WithdrawFundsContentBox4">
+                            <div className="WithdrawFundsContentBox3A">
+                                <p>Do you want to withdraw bonus and profit to account balance?</p>
+                                <button onClick={addProfitToAccount}
+                                 disabled={isButtonDisabled2}
+                                 style={{background: `${isButtonDisabled2 ? "#E0E0E5" : "#0E4152"}`}}
+                                >
+                                    <span>
+                                        <BiMoneyWithdraw />
+                                    </span>
+                                    withdrawal
+                                </button>
+                            </div>
                             <h3>Enter BITCOIN PAYMENT Address</h3>
                             <input
                                 type="text"
@@ -176,6 +209,15 @@ const sendWithdrawcode = ()=>{
                         </div>
                     </div>
                 </div>
+
+            {
+                pay ? <div className='SuccessPaid'>
+                <div className='PayCon'>
+                    <h3>{addprofit}</h3>
+                    <button style={{width: "50%", height: "40px", background:"#0e4152", border:"none", color:"white", fontSize:"15px"}} onClick={()=>{setpay(false); nav(`/${id}`); dispatch(updateDepositData(depositDatas))}}>Ok</button>
+                </div>
+            </div>: null
+            }
             </div>
         </>
     );
