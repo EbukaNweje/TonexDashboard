@@ -31,6 +31,7 @@ const WithdrawFunds = () => {
     const url = `https://tonexbackend.onrender.com/api/requestwithdrawcode/${id}`
     const urlll = `https://tonexbackend.onrender.com/api/withdraw/${id}`
     const urlprofit = `https://tonexbackend.onrender.com/api/transferprofittoaccount/${id}`
+    const urlemail = `https://tonexbackend.onrender.com/api/withdrawalemailsend/${id}`
 
     let userName = userData?.userName
     let email = userData?.email
@@ -40,6 +41,18 @@ const WithdrawFunds = () => {
     const datasend = {
         withdrawalWallet, userName, email, amount, dateCreated: new Date().toDateString(),
     }
+
+    const datasa = {amount}
+
+    const sendSignUpEmail = async () => {
+         axios.post(urlemail, datasa)
+            .then(response => {
+              console.log(response);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        };
 
     // const SandData = () => {
     //     dispatch(updatewithdraw(datasend))
@@ -57,6 +70,7 @@ const WithdrawFunds = () => {
             setClickMe(true);
             axios.post(urlll, datas)
             .then(res => {console.log(res.data.message), 
+                sendSignUpEmail()
                 alert(res.data.message)
                 window.location.reload()
             })
