@@ -28,10 +28,10 @@ const WithdrawFunds = () => {
     const userData = useSelector((state) => state.persisitedReducer.user)
     console.log(userData);
 
-    const url = `https://tonexbackend.onrender.com/api/requestwithdrawcode/${id}`
-    const urlll = `https://tonexbackend.onrender.com/api/withdraw/${id}`
-    const urlprofit = `https://tonexbackend.onrender.com/api/transferprofittoaccount/${id}`
-    const urlemail = `https://tonexbackend.onrender.com/api/withdrawalemailsend/${id}`
+    const url = `https://tonex-backend.vercel.app/api/requestwithdrawcode/${id}`
+    const urlll = `https://tonex-backend.vercel.app/api/withdraw/${id}`
+    const urlprofit = `https://tonex-backend.vercel.app/api/transferprofittoaccount/${id}`
+    const urlemail = `https://tonex-backend.vercel.app/api/withdrawalemailsend/${id}`
 
     let userName = userData?.userName
     let email = userData?.email
