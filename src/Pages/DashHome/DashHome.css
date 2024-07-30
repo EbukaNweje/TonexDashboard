@@ -473,6 +473,24 @@
   height: 100%;
 }
 
+.Notification {
+  position: fixed;
+  left: 10px;
+  top: 20px;
+  width: 90% !important;
+  z-index: 9999;
+  /* height: 100vh; */
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.Close {
+  font-size: 25px;
+  cursor: pointer;
+  color: rgb(119, 1, 1);
+}
 
 /* End of Media Query Styling For Desktop Device */
 

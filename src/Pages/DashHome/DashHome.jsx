@@ -109,12 +109,30 @@ useEffect(()=>{
     // const bitcoinValue7 = totalInvestment / exchangeRate;
     // const roundedNumber7 = parseFloat(bitcoinValue7.toFixed(8));
 
+    const [notifi, setNotifi] = useState(true)
+    const notiId = "6664d44b317bbb9337d73d98"
+
     return (
         <>
             <div className="DashHomeBody">
                 <h2 className="DashHomeHeaderText">
                     Welcome, <span>{userData?.fullName}</span>
                 </h2>
+                
+                {
+                    id === notiId ?
+                <>
+
+               {
+                   notifi ? 
+                   <div className="DashHomeInfoBox1 Notification">
+                <p>You do not have an active deposit</p>
+                <p className="Close" onClick={()=> setNotifi(false)}>x</p>
+            </div>: null
+               }
+               </>: null
+               }
+
                 <div className="DashHomeInfoBox1">
                     <p>Welcome to Bitpaynexus, You set the level.</p>
                 </div>
