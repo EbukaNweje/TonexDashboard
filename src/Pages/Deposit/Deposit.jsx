@@ -37,12 +37,14 @@ const Deposit = () => {
             setbnb(false)
             setEth2(false)
             setEth3(false)
+            setusdt(false)
             nav(`payment/BTC PAYMENT`)
         } else if(eth === true) {
             setDoge(false)
             setBitcoin(false)
             setbnb(false)
             setEth2(false)
+            setusdt(false)
             setEth3(false)
             nav(`payment/ETH PAYMENT`)
         } else if(doge === true) {
@@ -51,12 +53,14 @@ const Deposit = () => {
             setbnb(false)
             setEth2(false)
             setEth3(false)
+            setusdt(false)
             nav(`payment/DOGECOIN PAYMENT`)
         } else if(bnb === true) {
             setDoge(false)
             setBitcoin(false)
             setEth(false)
             setEth2(false)
+            setusdt(false)
             setEth3(false)
             nav(`payment/BNB PAYMENT`)
         }  else if(eth2 === true) {
@@ -64,12 +68,14 @@ const Deposit = () => {
             setBitcoin(false)
             setEth(false)
             setEth3(false)
+            setusdt(false)
             nav(`payment/TETHER BNB PAYMENT`)
         } else if(eth3 === true) {
             setDoge(false)
             setBitcoin(false)
             setEth(false)
             setEth2(false)
+            setusdt(false)
             nav(`payment/TETHER ETH PAYMENT`)
         }  else if(usdt === true) {
             setDoge(false)
@@ -160,9 +166,9 @@ const Deposit = () => {
                                 <input type="radio"  name="b"
                                     onChange={()=>{
                                         setBitcoin(false),
-                                        setDoge(false),
+                                        setDoge(true),
                                         setEth(false),
-                                        setbnb(true)
+                                        setbnb(false)
                                         setEth2(false)
                                         setEth3(false)
                                         setusdt(false)
