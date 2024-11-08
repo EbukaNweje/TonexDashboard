@@ -30,7 +30,7 @@ const Payment = () => {
     const dispatch = useDispatch()
 
     const [state, setState] = useState({
-        value: `${paymentname === "BTC PAYMENT"? ("bc1qgdf6ecmm8m2smzz5anl0drapn3x82cle56yxu0"): paymentname === "ETH PAYMENT"? ("0xEbc54fEB0C9D4A056373DBd16B76E2A07D084E18"): paymentname === "DOGECOIN PAYMENT"? ("D9bLbTeYYoqw7Y2BXU7Un9AkdSgqW4nL9v"): paymentname === "BNB PAYMENT"? ("0xEbc54fEB0C9D4A056373DBd16B76E2A07D084E18"): paymentname === "TETHER BNB PAYMENT"? ("0xEbc54fEB0C9D4A056373DBd16B76E2A07D084E18"): paymentname === "TETHER ETH PAYMENT"? ("0xEbc54fEB0C9D4A056373DBd16B76E2A07D084E18"): paymentname === "USDT TRC20 PAYMENT" ? ("TKpMZTosMsWwWS6uZnbua8iNQz1kCUnP5j"):"Chosse a Payment Method"}`,
+        value: `${paymentname === "BTC"? ("bc1qgdf6ecmm8m2smzz5anl0drapn3x82cle56yxu0"): paymentname === "ETH"? ("0xEbc54fEB0C9D4A056373DBd16B76E2A07D084E18"): paymentname === "DOGECOIN"? ("D9bLbTeYYoqw7Y2BXU7Un9AkdSgqW4nL9v"): paymentname === "BNB"? ("0xEbc54fEB0C9D4A056373DBd16B76E2A07D084E18"): paymentname === "TETHER-BNB "? ("0xEbc54fEB0C9D4A056373DBd16B76E2A07D084E18"): paymentname === "TETHER-ETH"? ("0xEbc54fEB0C9D4A056373DBd16B76E2A07D084E18"): paymentname === "USDT-TRC20" ? ("TKpMZTosMsWwWS6uZnbua8iNQz1kCUnP5j"):"Chosse a Payment Method"}`,
         copied: false,
       });
 
@@ -40,6 +40,7 @@ const Payment = () => {
       const data = {
         amount:amount
       }
+
       const data2 = {
         amount: amount,
         coin: paymentname
@@ -48,21 +49,22 @@ const Payment = () => {
       const SendPayMenttoadmin = ()=> {
         axios.post(url2, data2)
         .then(res => {
-          console.log(res)
+          console.log("This is what al look",res)
         //   setpay(true)
         }).catch((err)=>{
           console.log(err)
         })
       }
+      
       const payNow = ()=> {
         setButtonDisabled(true)
         axios.post(url, data)
         .then(res => {
             SendPayMenttoadmin()
-          console.log(res)
+          console.log("mummuuy",res)
           setpay(true)
         }).catch((err)=>{
-          console.log(err)
+          console.log("err", err)
         })
       }
 

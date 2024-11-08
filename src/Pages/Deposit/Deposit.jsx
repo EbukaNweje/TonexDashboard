@@ -38,7 +38,7 @@ const Deposit = () => {
             setEth2(false)
             setEth3(false)
             setusdt(false)
-            nav(`payment/BTC PAYMENT`)
+            nav(`payment/BTC`)
         } else if(eth === true) {
             setDoge(false)
             setBitcoin(false)
@@ -46,7 +46,7 @@ const Deposit = () => {
             setEth2(false)
             setusdt(false)
             setEth3(false)
-            nav(`payment/ETH PAYMENT`)
+            nav(`payment/ETH`)
         } else if(doge === true) {
             setEth(false)
             setBitcoin(false)
@@ -54,7 +54,7 @@ const Deposit = () => {
             setEth2(false)
             setEth3(false)
             setusdt(false)
-            nav(`payment/DOGECOIN PAYMENT`)
+            nav(`payment/DOGECOIN`)
         } else if(bnb === true) {
             setDoge(false)
             setBitcoin(false)
@@ -62,27 +62,27 @@ const Deposit = () => {
             setEth2(false)
             setusdt(false)
             setEth3(false)
-            nav(`payment/BNB PAYMENT`)
+            nav(`payment/BNB`)
         }  else if(eth2 === true) {
             setDoge(false)
             setBitcoin(false)
             setEth(false)
             setEth3(false)
             setusdt(false)
-            nav(`payment/TETHER BNB PAYMENT`)
+            nav(`payment/TETHER-BNB`)
         } else if(eth3 === true) {
             setDoge(false)
             setBitcoin(false)
             setEth(false)
             setEth2(false)
             setusdt(false)
-            nav(`payment/TETHER ETH PAYMENT`)
+            nav(`payment/TETHER-ETH`)
         }  else if(usdt === true) {
             setDoge(false)
             setBitcoin(false)
             setEth(false)
             setEth2(false)
-            nav(`payment/USDT TRC20 PAYMENT`)
+            nav(`payment/USDT-TRC20`)
         }  
     }
    
